@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Prediksi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="{{ url_for('index') }}">Asuransi & Prediksi Premi</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Beranda</a></li>
+                    <li><a href="{{ url_for('show_boxplot') }}">Boxplot</a></li>
+                    <li><a href="{{ url_for('show_cluster_plot') }}">Cluster Plot</a></li>
+                    <li><a href="{{ url_for('show_radar_chart') }}">Radar Chart</a></li>
+                    <li><a href="{{ url_for('show_actual_predicted_plot') }}">Actual vs Predicted</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="result-card">
+            <h2>Hasil Prediksi Premi & Segmentasi</h2>
+            
+            <div class="result-icon">
+                <!-- Pastikan path gambar icon ini benar di folder static -->
+                <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Insurance Icon" />
+            </div>
+
+            <div class="result-details">
+                <div class="detail-item">
+                    <h3>Cluster Pelanggan:</h3>
+                    <p class="cluster-label">Cluster {{ cluster }}</p>
+                </div>
+                
+                <div class="detail-item">
+                    <h3>Deskripsi Cluster:</h3>
+                    <p class="cluster-description">{{ cluster_desc }}</p>
+                </div>
+                
+                <div class="detail-item">
+                    <h3>Prediksi Premi:</h3>
+                    <p class="premium-value">{{ premi }}</p>
+                </div>
+            </div>
+
+            <a href="{{ url_for('index') }}" class="button primary-button">Kembali ke Beranda</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kelompok 2 Data Mining</p>
+        </div>
+    </footer>
+</body>
+</html>

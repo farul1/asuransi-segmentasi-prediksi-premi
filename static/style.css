@@ -1,0 +1,438 @@
+/* General styling */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif; /* Menggunakan font yang sedikit berbeda */
+    margin: 0;
+    background-color: #f0f2f5; /* Background abu-abu muda yang lebih modern */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #2c3e50; /* Biru tua/abu-abu tua yang elegan */
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header h1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 26px; /* Ukuran font sedikit lebih besar */
+    font-weight: 700; /* Lebih tebal */
+    letter-spacing: 0.5px;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 30px; /* Spasi antar menu lebih besar */
+}
+
+header nav ul li a {
+    color: #aebacd; /* Warna teks menu sedikit lebih terang */
+    text-decoration: none;
+    padding: 10px 18px; /* Padding lebih besar untuk area klik */
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background-color: #34495e; /* Background lebih gelap saat hover */
+    color: #ffffff; /* Teks putih solid saat hover/aktif */
+}
+
+/* Main content area */
+main.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-top: 40px; /* Margin atas lebih besar */
+    margin-bottom: 40px;
+}
+
+/* Prediction Card Styling */
+.prediction-card {
+    background-color: #34495e; /* Warna gelap konsisten */
+    color: #ecf0f1; /* Teks terang */
+    padding: 45px; /* Padding lebih besar */
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    max-width: 650px; /* Lebih lebar sedikit */
+    margin: 40px auto; /* Margin lebih besar */
+    text-align: left;
+    border: none; /* Hilangkan border */
+    position: relative; /* Untuk efek glow dan z-index */
+    overflow: hidden; /* Pastikan efek tidak keluar */
+    z-index: 1; /* Pastikan kartu prediksi di atas background */
+}
+
+.prediction-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(100, 149, 237, 0.1) 0%, rgba(100, 149, 237, 0) 70%);
+    transform: rotate(45deg);
+    transition: transform 0.8s ease-out;
+    opacity: 0.3;
+}
+
+.prediction-card:hover::before {
+    transform: rotate(0deg);
+}
+
+
+.prediction-card h2 {
+    color: #ecf0f1;
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.prediction-card label {
+    display: block;
+    margin-bottom: 12px;
+    color: #bdc3c7; /* Warna label lebih lembut */
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* --- PERBAIKAN: Lebih tegas dalam mengatur gaya input dan select --- */
+/* Gaya untuk input[type="number"] dan input[type="text"] */
+.prediction-card input[type="number"],
+.prediction-card input[type="text"] {
+    width: calc(100% - 28px);
+    padding: 14px;
+    margin-bottom: 28px;
+    border: 1px solid #4a657c;
+    border-radius: 8px;
+    background-color: #2b3e50;
+    color: #ecf0f1;
+    font-size: 17px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Sangat Penting untuk membuat input dapat diketik */
+    -webkit-appearance: textfield !important; /* Force textfield appearance for Chrome/Safari */
+    -moz-appearance: textfield !important; /* Force textfield appearance for Firefox */
+    appearance: textfield !important; /* Force standard appearance */
+    background-image: none !important; /* Pastikan tidak ada gambar panah dropdown */
+    cursor: text !important; /* Pastikan kursor menunjukkan ini adalah input teks */
+    pointer-events: auto !important; /* Pastikan elemen menerima event pointer */
+    z-index: 5; /* Pastikan input berada di atas elemen lain */
+    position: relative; /* Diperlukan untuk z-index */
+}
+
+/* Gaya khusus untuk select (dengan panah dropdown custom) */
+.prediction-card select {
+    width: calc(100% - 28px);
+    padding: 14px;
+    margin-bottom: 28px;
+    border: 1px solid #4a657c;
+    border-radius: 8px;
+    background-color: #2b3e50;
+    color: #ecf0f1;
+    font-size: 17px;
+    box-sizing: border-box;
+    /* Properti appearance dan background-image hanya untuk select */
+    -webkit-appearance: none !important; /* Force custom dropdown appearance */
+    -moz-appearance: none !important; /* Force custom dropdown appearance */
+    appearance: none !important; /* Force standard custom dropdown appearance */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23bdc3c7%22%20d%3D%22M287%2069.9a17.6%2017.6%200%200%200-24.9%200L146.2%20185.7%2030.3%2069.9a17.6%2017.6%200%200%200-24.9%2024.9l130.6%20130.6c6.9%206.9%2017.6%206.9%2024.9%200L287%2094.8c6.9-6.9%206.9-17.6%200-24.9z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    pointer-events: auto !important; /* Pastikan elemen menerima event pointer */
+    z-index: 5; /* Pastikan select berada di atas elemen lain */
+    position: relative; /* Diperlukan untuk z-index */
+}
+
+
+.prediction-card input[type="number"]::placeholder,
+.prediction-card input[type="text"]::placeholder {
+    color: #95a5a6; /* Placeholder lebih lembut */
+}
+
+.prediction-card input:focus,
+.prediction-card select:focus {
+    border-color: #3498db; /* Border biru saat focus */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+    outline: none;
+}
+
+.prediction-card select option {
+    background-color: #2b3e50;
+    color: #ecf0f1;
+}
+
+
+.prediction-card button[type="submit"] {
+    background-color: #3498db; /* Biru cerah */
+    color: white;
+    padding: 16px 35px;
+    border: none;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer !important; /* Pastikan kursor pointer untuk tombol */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    pointer-events: auto !important; /* Pastikan tombol menerima event pointer */
+    z-index: 5; /* Pastikan tombol berada di atas elemen lain */
+    position: relative; /* Diperlukan untuk z-index */
+}
+
+.prediction-card button[type="submit"]:hover {
+    background-color: #2980b9; /* Biru lebih gelap saat hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Result Card Styling */
+.result-card {
+    background-color: #ffffff; /* Background putih */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* Bayangan lebih dalam */
+    text-align: center;
+    max-width: 700px; /* Ukuran lebih besar */
+    margin: 40px auto;
+    border: 1px solid #e0e0e0;
+    animation: fadeInScale 0.8s ease-out forwards; /* Animasi masuk */
+}
+
+.result-card h2 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Ukuran ikon yang lebih pas */
+.result-icon {
+    margin-bottom: 25px; /* Spasi bawah ikon */
+}
+
+.result-icon img {
+    width: 120px; /* Ukuran ikon lebih besar dari 100px */
+    height: 120px; /* Tinggi sama dengan lebar untuk proporsi */
+    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+    margin: 0 auto; /* Pusatkan gambar */
+    animation: bounceIn 1s ease-out; /* Animasi ikon */
+}
+
+
+.result-details {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Jarak antar detail item */
+    text-align: left; /* Teks detail rata kiri */
+}
+
+.detail-item {
+    background-color: #f9f9f9; /* Background untuk setiap item detail */
+    padding: 15px 25px;
+    border-radius: 8px;
+    border-left: 5px solid #3498db; /* Border kiri sebagai aksen */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-item:hover {
+    transform: translateY(-5px); /* Efek hover */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.detail-item h3 {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.cluster-label {
+    font-size: 24px;
+    color: #2980b9; /* Warna biru untuk label cluster */
+    font-weight: bold;
+    margin: 0;
+}
+
+.cluster-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.premium-value {
+    font-size: 28px;
+    color: #27ae60; /* Warna hijau untuk nilai premi */
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Plot Container for Visualizations */
+.plot-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 30px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.plot-container h3 {
+    font-size: 22px;
+    color: #34495e;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.plot-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto 25px auto;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 14px 30px;
+    margin-top: 30px;
+    background-color: #3498db; /* Biru cerah */
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer !important; /* Memastikan kursor pointer untuk tombol */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    pointer-events: auto !important; /* Sangat penting: Pastikan tombol menerima event pointer */
+    z-index: 5; /* Pastikan tombol berada di atas elemen lain */
+    position: relative; /* Diperlukan untuk z-index */
+}
+
+.button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.primary-button {
+    background-color: #27ae60; /* Hijau */
+}
+
+.primary-button:hover {
+    background-color: #229a56;
+}
+
+.back-button {
+    background-color: #95a5a6; /* Abu-abu */
+}
+
+.back-button:hover {
+    background-color: #7f8c8d;
+}
+
+/* Flash messages styling */
+.flashes {
+    list-style: none;
+    padding: 18px;
+    margin: 25px 0;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-size: 16px;
+    letter-spacing: 0.2px;
+}
+
+.flashes li {
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    color: white;
+}
+
+.flashes .error {
+    background-color: #e74c3c; /* Merah */
+    border: 1px solid #c0392b;
+}
+
+.flashes .success {
+    background-color: #2ecc71; /* Hijau */
+    border: 1px solid #27ae60;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    background-color: #34495e; /* Warna gelap konsisten */
+    color: #ecf0f1;
+    font-size: 14px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+}
+
+/* Animations */
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.1); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
