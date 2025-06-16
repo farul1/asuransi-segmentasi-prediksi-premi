@@ -14,8 +14,6 @@ Sebuah proyek Data Mining yang mengaplikasikan teknik Machine Learning untuk men
   - [Radar Chart Profil Cluster](#radar-chart-profil-cluster)
   - [Aktual vs Prediksi Premi](#aktual-vs-prediksi-premi)
 - [Struktur Proyek](#struktur-proyek)
-- [Kontribusi](#kontribusi)
-- [Lisensi](#lisensi)
 - [Anggota Kelompok](#anggota-kelompok)
 
 ## Tentang Proyek
@@ -143,10 +141,6 @@ Menyajikan profil rata-rata untuk setiap cluster berdasarkan fitur-fitur yang di
 ├── Insurance_Clustering_Regression.ipynb # Notebook Jupyter untuk eksplorasi
 └── train_model.py              # Skrip untuk melatih dan menyimpan model
 ```
-
-## Kontribusi
-Jika Anda memiliki saran atau ingin berkontribusi pada proyek ini, silakan buka *issue* atau buat *pull request*.
-
 
 ## Anggota Kelompok
 * Syafarul Priwantoro (1204220018)
