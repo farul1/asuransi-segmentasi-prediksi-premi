@@ -103,9 +103,7 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek ini secara lokal di kompu
 Aplikasi ini menyediakan berbagai visualisasi untuk memahami data dan kinerja model.
 
 ### Boxplot Data Numerik
-Menampilkan distribusi dan potensi *outlier* untuk fitur-fitur numerik utama dalam dataset.
-![Boxplot Data Numerik](static/boxplot_data_numerik.png)
-*(Ganti `static/boxplot_data_numerik.png` dengan path ke gambar boxplot Anda yang sebenarnya di folder `static/`.)*
+*Masih Perbaikan*
 
 ### Visualisasi Cluster (Pendapatan vs Premi)
 *Scatterplot* yang menampilkan bagaimana pelanggan dikelompokkan (clustered) berdasarkan Pendapatan dan Premi. Untuk dataset besar, plot ini menampilkan sampel 25 titik data agar lebih jelas.
