@@ -147,12 +147,11 @@ Menyajikan profil rata-rata untuk setiap cluster berdasarkan fitur-fitur yang di
 ## Kontribusi
 Jika Anda memiliki saran atau ingin berkontribusi pada proyek ini, silakan buka *issue* atau buat *pull request*.
 
-## Lisensi
-Proyek ini dilisensikan di bawah [MIT License](https://opensource.org/licenses/MIT).
 
 ## Anggota Kelompok
-*Syafarul Priwantoro 		(1204220018) 
-*Shafira Daffa Tzabillah		(1204220130) 
-*Angelica Vanniza Arinda		(1204220063) 
-*Auditya Fariz Chrisnadeva	(1204220086) 
-*Cito Julio Ibrahim Kertawirja	(1204238073) 
+* Syafarul Priwantoro (1204220018)
+* Shafira Daffa Tzabillah (1204220130)
+* Angelica Vanniza Arinda (1204220063)
+* Auditya Fariz Chrisnadeva (1204220086)
+* Cito Julio Ibrahim Kertawirja (1204238073)
+
